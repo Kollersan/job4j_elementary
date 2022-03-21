@@ -4,10 +4,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.is;
 
 public class SqAreaTest {
 
-    @Test
+   /* @Test
     public void whenP6K2Square2() {
         int expected = 2;
         int p = 6;
@@ -41,5 +42,14 @@ public class SqAreaTest {
         double k = 5;
         double out = SqArea.square(p, k);
         Assert.assertEquals(expected, out, 0.01);
+    } */
+
+    @Test
+    public void whenp4k1s1() {
+        int k = 1;
+        int p = 4;
+        int expected = 1;
+        int s = SqArea.square(p, k);
+        Assert.assertEquals(s, expected);
     }
 }
