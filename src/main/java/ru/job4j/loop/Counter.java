@@ -9,6 +9,17 @@ public class Counter {
         return sum;
     }
 
+    public static int sumByEven(int start, int finish) {
+        int sum = 0;
+        int count;
+        for (count = start; count <= finish; count++) {
+            if (count % 2 == 0) {
+                sum = sum + count;
+            }
+        }
+        return sum;
+    }
+
     public static void main(String[] args) {
         System.out.println(sum(0, 10));
         System.out.println(sum(3, 8));
@@ -16,5 +27,9 @@ public class Counter {
         System.out.println(sum(9, 15));
         System.out.println(sum(11, 58));
         System.out.println(sum(100, 348));
+
+        System.out.println(sumByEven(0, 10));
+        System.out.println(sumByEven(3, 8));
+        System.out.println(sumByEven(1, 1));
     }
 }
