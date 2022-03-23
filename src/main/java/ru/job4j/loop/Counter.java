@@ -11,8 +11,7 @@ public class Counter {
 
     public static int sumByEven(int start, int finish) {
         int sum = 0;
-        int count;
-        for (count = start; count <= finish; count++) {
+        for (int count = start; count <= finish; count++) {
             if (count % 2 == 0) {
                 sum = sum + count;
             }
