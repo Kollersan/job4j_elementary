@@ -33,4 +33,26 @@ public class FindLoopTest {
         int expected = 2;
         Assert.assertEquals(expected, result);
     }
+
+    @Test
+    public void whenArrayFrom3To5Has4Then5() {
+        int[] data = {1, 2, 3, 4, 5, 6};
+        int el = 4;
+        int start = 3;
+        int finish = 5;
+        int result = FindLoop.indexInRange(data, el, start, finish);
+        int expected = 3;
+        Assert.assertEquals(result, expected);
+    }
+
+    @Test
+    public void whenArrayFrom3To5Has6ThenMinusOne() {
+        int[] data = {1, 2, 3, 4, 5, 6};
+        int el = 6;
+        int start = 3;
+        int finish = 5;
+        int result = FindLoop.indexInRange(data, el, start, finish);
+        int expected = -1;
+        Assert.assertEquals(result, expected);
+    }
 }
