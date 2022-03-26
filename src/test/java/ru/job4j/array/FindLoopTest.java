@@ -48,7 +48,7 @@ public class FindLoopTest {
     @Test
     public void whenArrayFrom3To5Has6ThenMinusOne() {
         int[] data = {1, 2, 3, 4, 5, 6};
-        int el = 6;
+        int el = 8;
         int start = 3;
         int finish = 5;
         int result = FindLoop.indexInRange(data, el, start, finish);
