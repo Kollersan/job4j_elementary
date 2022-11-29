@@ -2,58 +2,32 @@ package ru.job4j.array;
 
 public class JavaNameValidator {
     public static boolean isNameValid(String name) {
-        boolean valid = false;
-        if (!name.isEmpty()) {
-            for (int i = 0; i < name.length(); i++) {
+        if (name.isEmpty() || isUpperLatinLetter(name.codePointAt(0)) || isDigit(name.codePointAt(0))) {
+            return false;
+        } else {
+            for (int i = 1; i < name.length(); i++) {
                 int code = name.codePointAt(i);
-                if (isUpperCase(name.codePointAt(0)) || isDigit(name.codePointAt(0))) {
-                    valid = false;
-                    break;
-                } else if (isSpecialSymbol(code) || isDigit(code) || isUpperLatinLetter(code) || isLowerLatinLetter(code)) {
-                    valid = true;
+                if (!isSpecialSymbol(code) && !isDigit(code) && !isUpperLatinLetter(code) && !isLowerLatinLetter(code)) {
+                    return false;
                 }
             }
+            return true;
         }
-        return valid;
     }
 
     public static boolean isSpecialSymbol(int code) {
-        boolean valid = false;
-        if (code == 36 || code == 95) {
-            valid = true;
-        }
-        return valid;
+        return (code == 36 || code == 95);
     }
 
     public static boolean isUpperLatinLetter(int code) {
-        boolean valid = false;
-        if (code >= 65 && code <= 90) {
-            valid = true;
-        }
-        return valid;
+        return (code >= 65 && code <= 90);
     }
 
     public static boolean isLowerLatinLetter(int code) {
-        boolean valid = false;
-        if (code >= 97 && code <= 122) {
-            valid = true;
-        }
-        return valid;
+        return (code >= 97 && code <= 122);
     }
 
     public static boolean isDigit(int code) {
-        boolean valid = false;
-        if (code >= 48 && code <= 57) {
-            valid = true;
-        }
-        return valid;
-    }
-
-    public static boolean isUpperCase(int code) {
-        boolean valid = false;
-        if (code >= 65 && code <= 90) {
-            valid = true;
-        }
-        return valid;
+        return (code >= 48 && code <= 57);
     }
 }
